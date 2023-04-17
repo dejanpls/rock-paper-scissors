@@ -5,14 +5,27 @@ function getRandomNumber() {
   return Math.floor(Math.random() * 9) + 1;
 }
 
+
 function getComputerChoice() {
-    if (getRandomNumber() <= 3) return "Rock";
-    else if (getRandomNumber() <= 6) return "Paper";
-    else return "Scissors";
+    if (getRandomNumber() <= 3) return "rock";
+    else if (getRandomNumber() <= 6) return "paper";
+    else return "scissors";
   }
 
 
-function getUserChoice(choice) {
-  choice = prompt("Rock, Paper or Scissors?").toLowerCase();
-  return choice;
+function playRound(playerSelection, computerSelection) {
+  let winner = "You win! Congratulations!";
+  let loser = "You lose, better luck next time!"
+  let tie = "It's a tie."
+
+  if (playerSelection === "paper" && computerSelection === "scissors") return loser;
+  else if (playerSelection === "rock" && computerSelection === "paper") return loser;
+  else if (playerSelection === "scissors" && computerSelection === "rock") return loser;
+  else if (playerSelection === computerSelection) return tie;
+  else return winner;
+
 }
+
+const userChoice = prompt("Rock, Paper or Scissors?").toLowerCase();
+
+console.log(playRound(userChoice, getComputerChoice()));
