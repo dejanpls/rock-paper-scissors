@@ -6,7 +6,11 @@
 }
 
 body {
+	height: 100vh;
 	background: #1d3557;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
 
 h1.title,
@@ -22,7 +26,8 @@ h1.title {
 
 .btn,
 .result,
-.score {
+.score,
+.footer {
 	font-family: "Roboto", sans-serif;
 	font-weight: 400;
 	font-style: normal;
@@ -66,4 +71,17 @@ h1.title {
 .final {
 	height: 28px;
 	font-size: 28px;
+}
+
+
+div.footer {
+	height: 5vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 14px;
+}
+
+div.footer a {
+	text-decoration: none;
 }
