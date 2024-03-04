@@ -1,10 +1,12 @@
-const body = document.querySelector("body");
 const container = document.querySelector(".container");
 const buttons = document.querySelectorAll(".play");
 const resetBtn = document.querySelector(".reset");
 const result = document.querySelector("p.result");
 const currentScore = document.querySelector("p.score");
 const finalMsg = document.querySelector("h3.final");
+
+currentScore.style.visibility = "hidden";
+finalMsg.style.visibility = "hidden";
 
 const rps = ["rock", "paper", "scissors"];
 let playerSelection;
@@ -22,10 +24,12 @@ function game(e) {
 
   updateScore();
   result.textContent = roundResult;
+  currentScore.style.visibility = "visible";
   currentScore.textContent = `Player: ${playerScore} Computer: ${computerScore}`;
 
   if (playerScore === 5 || computerScore === 5) {
     buttons.forEach(button => button.style.display = "none");
+    resetBtn.textContent = "Wanna play again?";
     showFinalMsg(playerScore, computerScore);
   }
 
@@ -70,12 +74,13 @@ function showFinalMsg(playerScore, computerScore) {
   if (playerScore > computerScore) finalMsg.textContent = `You won! Congratulations!`;
   else finalMsg.textContent = `You lost! Better luck next time.`;
 
-  finalMsg.style.display = "block";
+  finalMsg.style.visibility = "visible";
 }
 
 function reset() {
   buttons.forEach(button => button.style.display = "inline");
-  finalMsg.style.display = "none";
+  resetBtn.textContent = "Reset";
+  finalMsg.style.visibility = "hidden";
   result.textContent = "Let's play a game!";
   // resets the score to zero
   playerScore = 0;

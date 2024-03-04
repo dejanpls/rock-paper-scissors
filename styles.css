@@ -1,0 +1,69 @@
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	color: #e0e1dd;
+}
+
+body {
+	background: #1d3557;
+}
+
+h1.title,
+h3.final {
+	font-family: "Madimi One", sans-serif;
+  	font-weight: 400;
+  	font-style: normal;
+}
+
+h1.title {
+	font-size: 42px;
+}
+
+.btn,
+.result,
+.score {
+	font-family: "Roboto", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+	height: 70vh;
+}
+
+.btn-container {
+	width: 370px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 50px;
+	gap: 10px;
+}
+
+.btn {
+	flex: 1;
+	font-size: 20px;
+	padding: 8px 0;
+	background: #f95738;
+	border-radius: 16px;
+}
+
+.btn.play {
+	background: #284b63;
+}
+
+.result,
+.score {
+	height: 20px;
+	font-size: 20px;
+}
+
+.final {
+	height: 28px;
+	font-size: 28px;
+}
