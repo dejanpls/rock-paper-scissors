@@ -5,12 +5,17 @@
 	color: #e0e1dd;
 }
 
+*:focus {
+	outline: none;
+}
+
 body {
 	height: 100vh;
 	background: #1d3557;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	align-items: center;
 }
 
 h1.title,
@@ -27,6 +32,7 @@ h1.title {
 .btn,
 .result,
 .score,
+.start-container,
 .footer {
 	font-family: "Roboto", sans-serif;
 	font-weight: 400;
@@ -47,7 +53,35 @@ h1.title {
 	justify-content: space-between;
 	align-items: center;
 	height: 50px;
-	gap: 10px;
+	gap: 16px;
+}
+
+.start-container {
+	width: 370px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: stretch;
+	height: 70vh;
+	text-align: center;
+	gap: 32px;
+}
+
+input#name {
+	height: 32px;
+	color: black;
+	align-self: center;
+	font-size: 20px;
+	width: 100px;
+	background: #1d3557;
+	border: none;
+	border-bottom: 1px solid #e0e1dd;
+	color: #e0e1dd;
+	text-align: center;
+}
+
+.start-logo {
+	font-size: 42px;
 }
 
 .btn {
@@ -55,7 +89,12 @@ h1.title {
 	font-size: 20px;
 	padding: 8px 0;
 	background: #f95738;
+	border: none;
 	border-radius: 16px;
+}
+
+.btn.start {
+	max-height: 50px;
 }
 
 .btn.play {
