@@ -3,7 +3,7 @@ const buttons = document.querySelectorAll(".play");
 const resetBtn = document.querySelector(".reset");
 const result = document.querySelector("p.result");
 const currentScore = document.querySelector("p.score");
-const finalMsg = document.querySelector("h3.final");
+const wonLostTie = document.querySelector("h3.wonLostTie");
 const startContainer = document.querySelector(".start-container");
 const startBtn = document.querySelector("button.start");
 const input = document.querySelector("#name");
@@ -31,6 +31,7 @@ function game(e) {
   roundResult = playRound(playerSelection, computerSelection);
 
   updateScore();
+  displayWhoWon();
   result.textContent = roundResult;
   // currentScore.style.visibility = "visible";
   displayCurrentScore();
@@ -82,30 +83,22 @@ function playRound(playerSelection, computerSelection) {
 function updateScore() {
   if (roundResult.includes("beats")) {
     playerScore++;
-    finalMsg.textContent = "YOU WIN";
-    finalMsg.style.color = "#588157";
   }
   else if (roundResult.includes("loses")) {
     computerScore++;
-    finalMsg.textContent = "YOU LOST";
-    finalMsg.style.color = "#f95738";
-  } else {
-    finalMsg.textContent = "IT'S A TIE";
-    finalMsg.style.color = "#e0e1dd";
-
   }
 }
 
 function showFinalMsg(playerScore, computerScore) {
-  if (playerScore > computerScore) finalMsg.textContent = `You won! Congratulations!`;
-  else finalMsg.textContent = `You lost! Better luck next time.`;
+  if (playerScore > computerScore) wonLostTie.textContent = `You won! Congratulations!`;
+  else wonLostTie.textContent = `You lost! Better luck next time.`;
 }
 
 function reset() {
   buttons.forEach(button => button.style.display = "inline");
   resetBtn.textContent = "Reset";
-  finalMsg.textContent = "Ready?";
-  finalMsg.style.color = "#e0e1dd";
+  wonLostTie.textContent = "Ready?";
+  wonLostTie.style.color = "#e0e1dd";
   result.textContent = "Let's play a game!";
   // resets the score to zero
   playerScore = 0;
@@ -118,5 +111,19 @@ function displayCurrentScore() {
     currentScore.textContent = `${name}: ${playerScore} Computer: ${computerScore}`;
   } else {
     currentScore.textContent = `Player: ${playerScore} Computer: ${computerScore}`;
+  }
+}
+
+function displayWhoWon() {
+  if (roundResult.includes("beats")) {
+    wonLostTie.textContent = "YOU WIN";
+    wonLostTie.style.color = "#588157";
+  }
+  else if (roundResult.includes("loses")) {
+    wonLostTie.textContent = "YOU LOST";
+    wonLostTie.style.color = "#f95738";
+  } else {
+    wonLostTie.textContent = "IT'S A TIE";
+    wonLostTie.style.color = "#e0e1dd";
   }
 }

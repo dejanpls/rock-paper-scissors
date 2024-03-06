@@ -19,7 +19,7 @@ body {
 }
 
 h1.title,
-h3.final {
+h3.wonLostTie {
 	font-family: "Madimi One", sans-serif;
   	font-weight: 400;
   	font-style: normal;
@@ -107,7 +107,7 @@ input#name {
 	font-size: 20px;
 }
 
-.final {
+.wonLostTie {
 	height: 28px;
 	font-size: 28px;
 	text-align: center;
