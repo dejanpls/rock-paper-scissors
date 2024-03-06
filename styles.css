@@ -26,7 +26,7 @@ h3.wonLostTie {
 }
 
 h1.title {
-	font-size: 42px;
+	font-size: 38px;
 }
 
 .btn,
@@ -48,7 +48,7 @@ h1.title {
 }
 
 .btn-container {
-	width: 370px;
+	width: 350px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -57,7 +57,7 @@ h1.title {
 }
 
 .start-container {
-	width: 370px;
+	width: 350px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
