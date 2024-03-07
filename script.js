@@ -7,7 +7,6 @@ const wonLostTie = document.querySelector("h3.wonLostTie");
 const startContainer = document.querySelector(".start-container");
 const startBtn = document.querySelector("button.start");
 const input = document.querySelector("#name");
-
 const gameTitle = document.querySelector("h1.title");
 
 
@@ -46,15 +45,17 @@ function game(e) {
   
 }
 
-startBtn.addEventListener("mousedown", (e) => {
-    startContainer.style.display = "none";
-    container.style.display = "flex";
-    name = input.value;
-  })
+startBtn.addEventListener("mousedown", showGameScreen)
 
 buttons.forEach(button => button.addEventListener("mousedown", game))
 
 // functions
+
+function showGameScreen(e) {
+  startContainer.style.display = "none";
+  container.style.display = "flex";
+  name = input.value;
+}
 
 function getComputerChoice() {
   return rps[Math.floor(Math.random() * rps.length)];
